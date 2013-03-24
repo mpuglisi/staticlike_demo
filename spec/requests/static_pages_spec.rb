@@ -45,4 +45,18 @@ describe "Static pages" do
     end
   end
 
+describe "Contact Us page" do
+    it "Dovrebbe avere il contenuto 'Contact Us'" do      
+      #get static_pages_index_path
+      visit '/static_pages/contact'
+      page.should have_selector('h1',:text=>'Contact Us')
+      #response.status.should be(200)
+    end
+
+    it "Dovrebbe avere il titolo corretto" do
+      visit '/static_pages/contact'
+      page.should have_selector('title',:text=> "Ruby on Rails Static Appl | Contact Us")
+    end
+  end
+
 end
