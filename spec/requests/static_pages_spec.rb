@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe "Static pages" do
 
+let(:titolo_base) {"Ruby on Rails Static Appl"}
+
   describe "Home page" do
     it "Dovrebbe avere il contenuto 'Sample App'" do      
       #get static_pages_index_path
@@ -13,7 +15,7 @@ describe "Static pages" do
 
     it "Dovrebbe avere il titolo corretto" do
       visit '/static_pages/home'
-      page.should have_selector('title',:text=> "Ruby on Rails Static Appl | Home")
+      page.should have_selector('title',:text=> "#{titolo_base} | Home")
     end
   end
 
@@ -27,7 +29,7 @@ describe "Static pages" do
 
     it "Dovrebbe avere il titolo corretto" do
       visit '/static_pages/help'
-      page.should have_selector('title',:text=> "Ruby on Rails Static Appl | Help")
+      page.should have_selector('title',:text=> "#{titolo_base} | Help")
     end
   end
 
@@ -41,7 +43,7 @@ describe "Static pages" do
 
     it "Dovrebbe avere il titolo corretto" do
       visit '/static_pages/about'
-      page.should have_selector('title',:text=> "Ruby on Rails Static Appl | About")
+      page.should have_selector('title',:text=> "#{titolo_base} | About")
     end
   end
 
@@ -55,7 +57,7 @@ describe "Contact Us page" do
 
     it "Dovrebbe avere il titolo corretto" do
       visit '/static_pages/contact'
-      page.should have_selector('title',:text=> "Ruby on Rails Static Appl | Contact Us")
+      page.should have_selector('title',:text=> "#{titolo_base} | Contact Us")
     end
   end
 
