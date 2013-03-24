@@ -6,8 +6,14 @@ describe "Static pages" do
     it "Dovrebbe avere il contenuto 'Sample App'" do      
       #get static_pages_index_path
       visit '/static_pages/home'
-      page.should have_content('Sample App')
+      #page.should have_content('Sample App')
+      page.should have_selector('h1',:text=>'Sample App')
       #response.status.should be(200)
+    end
+
+    it "Dovrebbe avere il titolo corretto" do
+      visit '/static_pages/home'
+      page.should have_selector('title',:text=> "Ruby on Rails Static Appl | Home")
     end
   end
 
@@ -15,17 +21,27 @@ describe "Static pages" do
     it "Dovrebbe avere il contenuto 'Help Me!'" do      
       #get static_pages_index_path
       visit '/static_pages/help'
-      page.should have_content('Help Me!')
+      page.should have_selector('h1',:text=>'Help Me!')
       #response.status.should be(200)
+    end
+
+    it "Dovrebbe avere il titolo corretto" do
+      visit '/static_pages/help'
+      page.should have_selector('title',:text=> "Ruby on Rails Static Appl | Help")
     end
   end
 
-  describe "About Ud page" do
+  describe "About Us page" do
     it "Dovrebbe avere il contenuto 'About Us'" do      
       #get static_pages_index_path
       visit '/static_pages/about'
-      page.should have_content('About Us')
+      page.should have_selector('h1',:text=>'About Us')
       #response.status.should be(200)
+    end
+
+    it "Dovrebbe avere il titolo corretto" do
+      visit '/static_pages/about'
+      page.should have_selector('title',:text=> "Ruby on Rails Static Appl | About")
     end
   end
 
