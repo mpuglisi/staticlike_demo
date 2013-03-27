@@ -12,7 +12,7 @@ group :development do
 
 #Alla prima esecuzione di GUARD è stato sollevato un warning su una dipendenza
 #mancante ed è stato suggerito di inserire la gem sotto.
-#Non è chiaro a cosa serva, ne se la posizione in cui è stata inserita è corretta.
+#Non è chiaro a cosa serva, ne se la posizione in cui è stata inserita è corretta??.
 	gem 'wdm' , '~>0.1'
 end
 
