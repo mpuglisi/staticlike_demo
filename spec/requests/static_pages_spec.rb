@@ -13,9 +13,16 @@ let(:titolo_base) {"Ruby on Rails Static Appl"}
       #response.status.should be(200)
     end
 
-    it "Dovrebbe avere il titolo corretto" do
+#Pre-Introduzione funzione Helper su composizione del titolo
+#    it "Dovrebbe avere il titolo corretto" do
+#      visit '/static_pages/home'
+#      page.should have_selector('title',:text=> "#{titolo_base} | Home")
+#    end
+#  end
+
+    it "Dovrebbe avere il titolo base" do
       visit '/static_pages/home'
-      page.should have_selector('title',:text=> "#{titolo_base} | Home")
+      page.should have_selector('title',:text=> "#{titolo_base}")
     end
   end
 
